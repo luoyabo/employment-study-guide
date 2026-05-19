@@ -99,11 +99,28 @@ body {
 
 .nav-icon { font-size: 1.1rem; }
 
-.sidebar-footer {
-  padding: 14px 20px;
-  border-top: 1px solid var(--border);
+.sidebar-footer p {
   font-size: 0.75rem;
   color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.sidebar-contact {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-contact p:first-child {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.sidebar-contact p {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  margin-bottom: 3px;
 }
 
 /* Menu Toggle */
