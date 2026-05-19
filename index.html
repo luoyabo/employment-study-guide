@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>就业和留学指南 - 信息管理平台</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>就业和留学指南</h1>
+    <p>信息管理平台</p>
+  </div>
+  <nav class="sidebar-nav">
+    <a href="#dashboard" class="nav-item active" data-page="dashboard">
+      <span class="nav-icon">📊</span> 仪表盘
+    </a>
+    <a href="#employment" class="nav-item" data-page="employment">
+      <span class="nav-icon">💼</span> 就业指南
+    </a>
+    <a href="#study-abroad" class="nav-item" data-page="study-abroad">
+      <span class="nav-icon">🎓</span> 留学指南
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <p>更新日期：2026年03月19日</p>
+  </div>
+</aside>
+
+<button class="menu-toggle" id="menuToggle">☰</button>
+
+<main class="main-content">
+  <section id="dashboard" class="page active">
+    <div class="page-header">
+      <h2>概览仪表盘</h2>
+      <p>就业和留学指南数据汇总</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">💼</div>
+        <div class="stat-info">
+          <span class="stat-number" id="jobCount">27</span>
+          <span class="stat-label">就业岗位类别</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎓</div>
+        <div class="stat-info">
+          <span class="stat-number">5</span>
+          <span class="stat-label">留学目的地</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div class="stat-info">
+          <span class="stat-number" id="cityCount">12</span>
+          <span class="stat-label">覆盖培训城市</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-info">
+          <span class="stat-number" id="avgSalary">12,000</span>
+          <span class="stat-label">平均月薪 (元)</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>薪资分布</h3>
+      <div class="chart-bar-container" id="salaryChart"></div>
+    </div>
+    <div class="card">
+      <h3>热门岗位 (按薪资排名)</h3>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>岗位</th><th>月薪范围</th><th>学历要求</th><th>培训地点</th></tr></thead>
+          <tbody id="topJobsTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="employment" class="page">
+    <div class="page-header">
+      <h2>就业指南</h2>
+      <p>共 27 个就业岗位类别，点击筛选查找合适机会</p>
+    </div>
+    <div class="filter-bar">
+      <input type="text" id="jobSearch" placeholder="搜索岗位名称...">
+      <select id="eduFilter">
+        <option value="">全部学历</option>
+        <option value="初中">初中</option>
+        <option value="高中/中专">高中/中专</option>
+        <option value="大专">大专</option>
+        <option value="本科">本科</option>
+      </select>
+      <select id="salaryFilter">
+        <option value="">全部薪资</option>
+        <option value="0-8000">8000元以下</option>
+        <option value="8000-15000">8000-15000元</option>
+        <option value="15000-30000">15000-30000元</option>
+        <option value="30000+">30000元以上</option>
+      </select>
+      <select id="locationFilter">
+        <option value="">全部地点</option>
+      </select>
+      <button class="btn-reset" id="resetFilters">重置筛选</button>
+    </div>
+    <div class="result-count" id="resultCount">显示 27 个岗位</div>
+    <div class="job-grid" id="jobGrid"></div>
+  </section>
+
+  <section id="study-abroad" class="page">
+    <div class="page-header">
+      <h2>留学指南</h2>
+      <p>5 个留学目的地，点击查看详情</p>
+    </div>
+    <div class="study-grid" id="studyGrid"></div>
+  </section>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
